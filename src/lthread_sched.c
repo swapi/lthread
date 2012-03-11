@@ -94,7 +94,7 @@ lthread_run(void)
     lthread_t *lt = NULL, *lttmp = NULL;
     int p = 0;
     int fd = 0;
-    int ret = 0;
+    int UNUSED(ret);
 
     sched = lthread_get_sched();
 

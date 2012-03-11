@@ -39,6 +39,17 @@
 #include "rbtree.h"
 #include "poller.h"
 
+#ifdef UNUSED
+#elif defined(__GNUC__)
+# define UNUSED(x) x __attribute__((unused))
+#elif defined(__LCLINT__)
+# define UNUSED(x) /*@unused@*/ x
+#elif defined(__cplusplus)
+# define UNUSED(x)
+#else
+# define UNUSED(x) x
+#endif
+
 #define LT_MAX_EVENTS    (500)
 #define MAX_STACK_SIZE (8*1024*1024)
 
