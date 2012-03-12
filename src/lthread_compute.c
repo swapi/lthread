@@ -254,7 +254,8 @@ _lthread_compute_run(void *arg)
     lthread_t *lt = NULL;
     struct timespec timeout;
     int status = 0;
-    int UNUSED(ret);
+    int ret = 0;
+    (void)ret; /* silence compiler */
 
     pthread_once(&key_once, once_routine);
 
